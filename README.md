@@ -1,352 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0. If a copy of the MPL was not distributed with this file, You can
- * obtain one at http://mozilla.org/MPL/2.0/
- *
- * Copyright (C) 2000-2013, Peter Johnson (www.delphidabbler.com).
- *
- * Read-me file for Stream Extension Classes units.
--->
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+# Stream Extension Classes
 
-<head>
+## Description
 
-  <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1" />
+This class library contains two units that provide some classes that can be used to extend the functionality of Delphi's _TStream_ classes.
 
-  <title>
-    DelphiDabbler Stream Extension Classes ReadMe
-  </title>
+The _PJStreamWrapper_ unit provides a class that can wrap any _TStream_ descendant while the _PJIStreams_ unit provides classes that implement the _IStream_ interface for various _TStream_ descendants.
 
-  <style type="text/css">
-    body {
-      margin: 1em;
-      padding: 0;
-      font-family: Verdana, Arial, sans-serif;
-      font-size: 9pt;
-      line-height: 150%;
-    }
-    h1 {
-      margin: 0 0 1em 0;
-      padding: 0.5em;
-      border: 1px silver solid;
-      background-color: #eee;
-      font-size: 13pt;
-      font-weight: bold;
-      text-align: center;
-    }
-    h1 .subtitle {
-      font-style: italic;
-      color: #336;
-    }
-    h2 {
-      margin: 1em 0 0 0;
-      padding: 0;
-      padding-bottom: 6px;
-      border-bottom: 1px silver solid;
-      font-size: 11pt;
-      font-weight: bold;
-    }
-    h3 {
-      margin: 0.5em 0 0 0;
-      padding: 0;
-      font-size: 9pt;
-      font-weight: bold;
-    }
-    p {
-      margin: 0.5em 0 0 0;
-      padding: 0;
-    }
-    ul, ol {
-      margin: 0.5em 0 0 3em;
-      padding: 0;
-    }
-    ul {
-      list-style-type: square;
-    }
-    ul.spaced li,
-    ol.spaced li {
-      margin-top: 0.5em;
-    }
-    ul.spaced li,
-    ol.spaced li {
-      margin-top: 0.5em;
-    }
-    ul.unspaced li,
-    ol.unspaced li {
-      margin-top: 0;
-    }
-    ul.unspaced li.first,
-    ol.unspaced li.first {
-      margin-top: 0.5em;
-    }
-    code {
-      font-family: "Courier New", Courier, monospace;
-    }
-    a:link {
-      color: #336;
-      text-decoration: underline;
-    }
-    a:visited {
-      color: #669;
-      text-decoration: underline;
-    }
-    a:active {
-      color: #336;
-      text-decoration: underline;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .gototop {
-      margin: 1em 0 0 0;
-      padding: 0.3em 0 0 0;
-      text-align: center;
-      position: relative;
-      float: right;
-      font-weight: bold;
-    }
-    .pullout {
-      border-left: 8px silver solid;
-      background-color: #eee;
-      margin: 0.5em 0 0 0;
-      padding: 0.25em 0.5em;
-      font-style: italic;
-    }
-    .indent {
-      margin-left: 3em;
-    }
-    .highlight {
-      color: #336;
-      font-style: italic;
-      font-weight: bold;
-    }
-    .endnotes {
-      margin: 1.5em 0 0 0;
-      padding: 1em 0 0 0;
-      border-top: 1px silver solid;
-    }
-    .comments {
-      font-style: italic;
-    }
-    .copyright,
-    .copyright a:link,
-    .copyright a:visited,
-    .copyright a:active {
-      margin: 1em 0 0 0;
-      color: gray;
-      font-size: 8pt;
-      text-align: right;
-    }
-  </style>
+The classes are all documented [online](https://delphidabbler.com/url/streams-docs).
 
-</head>
+## Demo Projects
 
+Three demo projects are provided in the download:
 
-<body>
+1. `IStreamWrap.dpr` in the `IStreamWrapDemo` sub-directory. This is a VCL project that demonstrates the _IStream_ wrapper classes in the _PJIStreams_ unit.
+2. `IStreamWrapFMX.dpr` in the `IStreamWrapDemoFMX` sub-directory. This is a FireMonkey 2 project that demonstrates the _IStream_ wrapper classes in the _PJIStreams_ unit. It is similar, but not identical, to `IStreamWrap.dpr`.
+3. `StreamWrap.dpr` in the `StreamWrapDemo` sub-directory. This is a VCL project that demonstrates the _PJStreamWrapper_ unit.
 
-<h1>
-  <div>Stream Extension Classes</div>
-  <div class="subtitle">ReadMe</div>
-</h1>
+All the demo projects are stored in the `Demos` directory.
 
-<h2 id="description">
-  Description
-</h2>
+## Unit Tests
 
-<p>
-  This class library contains two units that provide some classes that can be
-  used to extend the functionality of Delphi's <var>TStream</var> classes.
-</p>
+Unit tests are provided for all classes in the `Tests` directory.
 
-<p>
-  The <em>PJStreamWrapper</em> unit provides a class that can wrap any
-  <var>TStream</var> descendant while the <var>PJIStreams</var> unit provides
-  classes that implement the <var>IStream</var> interface for various
-  <var>TStream</var> descendants.
-</p>
+Tests require the _DUnit_ unit testing framework, which must be installed in a location accessible to your Delphi compiler.
 
-<h2 id="demo">
-  Demo Projects
-</h2>
+## Compatibility
 
-<p>
-  Three demo projects are provided in the download:
-</p>
+The classes are compatible with the following:
 
-<ol class="spaced">
-  <li>
-    <code>IStreamWrap.dpr</code> in the <code>IStreamWrapDemo</code>
-    sub-directory. This is a VCL project that demonstrates the IStream wrapper
-    classes in the <var>PJIStreams</var> unit.
-  </li>
-  <li>
-    <code>IStreamWrapFMX.dpr</code> in the <code>IStreamWrapDemoFMX</code>
-    sub-directory. This is a FireMonkey 2 project that demonstrates the IStream
-    wrapper classes in the <var>PJIStreams</var> unit. It is similar, but not
-    identical, to <code>IStreamWrap.dpr</code>.
-  </li>
-  <li>
-    <code>StreamWrap.dpr</code> in the <code>StreamWrapDemo</code>
-    sub-directory. This is a VCL project that demonstrates the
-    <var>PJStreamWrapper</var> unit.
-  </li>
-</ol>
+* The Delphi 4 and later Win 32 compilers.
+* The Delphi XE2 and later Win 64 compilers.
+* Both ANSI and Unicode strings.
+* The VCL and FireMonkey platforms (for Windows only).
 
-<p>
-  All the test projects are stored in the <code>Demos</code> directory.
-</p>
+## Installation
 
-<h2 id="tests">
-  Unit Tests
-</h2>
+The _Stream Extension Classes_ units are provided in a zip file. Once the units are extracted you can use them as required. There are several ways you may wish to do this:
 
-<p>
-  Unit tests are provided for all classes in the <code>Tests</code> directory.
-</p>
+1. The simplest way is to add the units to your projects as you need them.
+2. To make the units easier to re-use you can add the folder where you extracted them to your Delphi search path and then simply use the units as required without needing to add them to your project.
+3. For maximum portability you can add the units to a package. [More info...](https://delphidabbler.com/url/install-comp).
+4. If you use Git you can add the [`ddablib/streams`](https://github.com/ddablib/streams) GitHub repository as a Git submodule and add it to your project. Obviously, it's safer if you fork the repo and use your copy, just in case `ddablib/streams` ever goes away.
 
-<p>
-  Tests require the DUnit unit testing framework, which must be installed in a
-  location accessible to your Delphi compiler.
-</p>
+In addition to the above files, there are two directories included in the zip file:
 
-<h2 id="compatibility">
-  Compatibility
-</h2>
+1. The `Demos` directory contains the [demo projects](#demo-projects).
+2. The `Tests` directory contains the [unit tests](#unit-tests).
 
-<p>
-  The classes are compatible with the following:
-</p>
+## Update History
 
-<ul class="spaced">
-  <li>
-    The Delphi 4 and later Win 32 compilers.
-  </li>
-  <li>
-    The Delphi XE2 and later Win 64 compilers.
-  </li>
-  <li>
-    Both ANSI and Unicode strings.
-  </li>
-  <li>
-    The VCL and FireMonkey platforms (for Windows only).
-  </li>
-</ul>
+A complete change log is provided in [`CHANGELOG.md`](https://github.com/ddablib/streams/blob/main/CHANGELOG.md) that is included in the download.
 
-<h2 id="installation">
-  Installation
-</h2>
+## License
 
-<p>
-  The <em>Stream Extension Classes</em> units are provided in a zip file. Once
-  the units are extracted you can use them as required. There are several ways
-  you may wish to do this:
-</p>
+The _Stream Extension Classes_ are released under the terms of the [Mozilla Public License, v2.0](https://www.mozilla.org/MPL/2.0/).
 
-<ul class="spaced">
-  <li>
-    The simplest way is to add the units to your projects as you need them.
-  </li>
-  <li>
-    To make the units easier to re-use you can add the folder where you
-    extracted them to your Delphi search path and then simply use the units as
-    required without needing to add them to your project.
-  </li>
-  <li>
-    For maximum portability you can add the units to a package. <a
-      href="http://www.delphidabbler.com/url/install-comp"
-    >More info...</a>
-  </li>
-</ul>
+## Bugs and Feature Requests
 
-<p>
-  The demo files are stored in the <code>Demos</code> sub-folder and the DUnit
-  tests are in the <code>Tests</code> sub-folder.
-</p>
+Bugs can be reported or new features requested via the project's [Issue Tracker](https://github.com/ddablib/streams/issues). A GitHub account is required.
 
-<h2 id="documentation">
-  Documentation
-</h2>
+Please check if an issue has already been created for a similar report or request. If so then please add a comment containing as much information as you can to the existing issue, or if you've nothing to add, just add a :+1: (`:+1:`) comment. If there is no suitable existing issue then please add a new issue and give as much information as possible.
 
-<p>
-  The classes are all documented <a
-    href="http://www.delphidabbler.com/url/streams-docs"
-  >online</a>.
-</p>
+## About the Author
 
-<h2 id="update">
-  Update History
-</h2>
+I'm Peter Johnson – a hobbyist programmer living in Ceredigion in West Wales, UK, writing mainly in Delphi. My programs and other library code are available from: [https://delphidabbler.com/](https://delphidabbler.com/).
 
-<p>
-  A complete change log is provided in <code>ChangeLog.txt</code> that is
-  included in the download.
-</p>
-
-<h2 id="license">
-  License
-</h2>
-
-<p>
-  The <em>Stream Extension Classes</em> are released under the terms of the <a
-    href="http://www.mozilla.org/MPL/2.0/"
-  >Mozilla Public License, v2.0</a>.
-</p>
-
-<h2 id="bugs">
-  Bugs and Feature Requests
-</h2>
-
-<p>
-  Bugs can be reported or new features requested via the <a
-    href="http://www.delphidabbler.com/url/ddlib-issues"
-  >Issue Tracker</a>.
-</p>
-
-<p>
-  If no similar report or request has been recorded already, use the <em>New
-  Issue</em> link to add a new issue. Please select the most appropriate
-  template from the <em>Templates</em> drop down list. You should also specify
-  the <code>Project-streams</code> label.
-</p>
-
-<h2 id="author">
-  About the Author
-</h2>
-
-<p>
-  I'm Peter Johnson &ndash; a hobbyist programmer living in Ceredigion in West
-  Wales, UK, writing write mainly in Delphi. My programs and code are available
-  from: <a
-    href="http://www.delphidabbler.com/"
-  >http://www.delphidabbler.com/</a>.
-</p>
-
-<p>
-  I can be <a
-    href="http://www.delphidabbler.com/contact"
-  >contacted via the website</a>.
-</p>
-
-
-<div class="endnotes">
-
-  <div class="comments">
-    Please <a
-      href="http://www.delphidabbler.com/contact"
-    >let me know</a> if you have any comments about the classes, but please use
-    the Issue Tracker above to report bugs and request new features.
-  </div>
-
-  <div class="copyright">
-    This document is copyright &copy; 2000-2013, P D Johnson, <a
-      href="http://www.delphidabbler.com/"
-    >www.delphidabbler.com</a>.
-  </div>
-
-</div>
-
-</body>
-
-</html>
+This document is copyright © 2000-2022, [P D Johnson](https://gravatar.com/delphidabbler).
